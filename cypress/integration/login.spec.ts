@@ -1,10 +1,16 @@
+import LogInPage from "../pageObject/login.page"
+
 describe('cypress with tc', () => {
 
-    it ('testing google', () => {
+    it ('login', () => {
 
         cy.visit('/');
-        cy.get('[name="q"]')
-        .type('automation step by step');
+        LogInPage
+            .clickLoginBtn()
+            .inputEmail()
+            .inputPassword()
+            .clickSignIn()
+            .validateMessage();
     })
 
 
