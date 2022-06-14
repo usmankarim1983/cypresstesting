@@ -1,16 +1,23 @@
-import LogInPage from "../pageObject/login.page"
+import LogInPage from "../support/pageObject/login.page"
 
 describe('cypress with tc', () => {
+
+    before(function(){
+        cy.fixture('testdata').then(function(data)
+        {
+            this.data = data ;
+        })
+        })
 
     it ('login', () => {
 
         cy.visit('/');
-        LogInPage
-            .clickLoginBtn()
-            .inputEmail()
-            .inputPassword()
-            .clickSignIn()
-            .validateMessage();
+       const logInPage = new LogInPage()
+            logInPage.clickLoginBtn().click();
+            logInPage.inputEmail().type(this.)
+            logInPage.inputPassword();
+            logInPage.clickSignIn();
+            logInPage.validateMessage();
     })
 
 
