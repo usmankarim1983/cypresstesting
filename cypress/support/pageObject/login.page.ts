@@ -1,6 +1,7 @@
 class LogInPage {
-    clickLoginBtn(){
-        return cy.get('.login');
+    
+    clickSkipSignInBtn(){
+        return cy.get('#btn2').should('be.visible').click();
     }
     inputEmail(){
         return cy.get('#email');
@@ -10,7 +11,7 @@ class LogInPage {
         return cy.get('#passwd');
     }
     clickSignIn(){
-       return cy.get('#SubmitLogin]');
+       return cy.get('#SubmitLogin]').attachFile("sample.pdf");
     }
     validateMessage(){
        return cy.get('ol > li');
@@ -18,4 +19,4 @@ class LogInPage {
 
 
 }
-export default LogInPage
+export default new LogInPage
